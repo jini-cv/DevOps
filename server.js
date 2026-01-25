@@ -1,11 +1,11 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 const PORT = 4000;
 
-app.get('/', (req, res) => {
-    res.send('Hello! This is Jini’s automated deployment project!');
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
